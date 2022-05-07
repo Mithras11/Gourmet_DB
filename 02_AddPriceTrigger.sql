@@ -9,5 +9,3 @@ CREATE
             Products AS p
         WHERE
             p.id = NEW.ProductId);
-
-
