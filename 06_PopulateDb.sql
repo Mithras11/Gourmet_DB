@@ -1,19 +1,19 @@
-USE Restaurant;
+USE restaurant;
 
-INSERT INTO Roles (RoleType)
+INSERT INTO roles (role_type)
 VALUES 
 	('Administrator'),
 	('Bartender'), 
 	('Waiter');
 
-INSERT INTO Users (FirstName, LastName, Email, `Role`)
+INSERT INTO users (first_name, last_name, email, user_role)
 VALUES
 	('Gancho', 'Ganchev', 'g.ganchev@dbmail.com', 1), 
 	('Georgi', 'Georgiev', 'geo.georgiev@dbmail.com', 2), 
 	('Doncho', 'Donchev', 'd.donchev@dbmail.com', 3), 
 	('Tzenko', 'Tzenkov', 'tz.tzenkov@dbmail.com', 3);
 
-INSERT INTO `Tables` (Capacity)
+INSERT INTO restaurant_tables (capacity)
 VALUES
 	(8),
 	(6), 
@@ -22,12 +22,12 @@ VALUES
 	(2),
 	(2);
 
-INSERT INTO ProductCategories (`Name`)
+INSERT INTO product_categories (product_category_name)
 VALUES
 	('Food'),
 	('Beverage');
 
-INSERT INTO CategoryTypes (`MainCategory`, `Name`)
+INSERT INTO category_types (main_category, category_type_name)
 VALUES
 	(1,'Meat'),
 	(1,'Salad'),
@@ -35,7 +35,7 @@ VALUES
 	(2,'Alcohol'),
 	(2,'Soft drink');
 
-INSERT INTO Products (`Name`, Category, `Type`, ImagePath, Price)
+INSERT INTO products (product_name, category, product_type, image_path, price)
 VALUES
 -- meat
 	('Veal', 1, 1, NULL, 20),
@@ -56,13 +56,13 @@ VALUES
 	('Coke', 2, 5, NULL, 2),
 	('Orange juice', 2, 5, 'https://unsplash.com/s/photos/orange-juice', 3);
 
-INSERT INTO OrderStatuses (`Name`)
+INSERT INTO order_statuses (status_name)
    VALUES
 	  ('In Progress'),
 	  ('Completed'),
 	  ('Cancelled');
 
-INSERT INTO Orders (Waiter, `Table`, `Status`, CreateDate, CreatedBy, EndDate, UpdatedBy)
+INSERT INTO orders (waiter, order_table, order_status, create_date, created_by, end_date, updated_by)
 VALUES
 	(3, 1, 1, '2022-02-07 13:23:00', 3, NULL, NULL), -- chicken & beer
 -- --------------------------
@@ -72,16 +72,25 @@ VALUES
 	(4, 3, 2, '2022-02-07 17:30:00', 4,'2022-02-07 17:35:00', 4), -- cucumber salad
 	(4, 4, 2, '2022-02-07 17:30:00', 4,'2022-02-07 17:35:00', 4);  -- pork & wine	
 
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (1, 3, 8);   -- chicken * 8
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (1, 10, 8);  -- beer * 8
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (1, 3, 8);   -- chicken * 8
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (1, 10, 8);  -- beer * 8
 ----------------------------
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (2, 12, 1);  -- coke * 1
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (2, 13, 3);  -- orange juice * 3
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (2, 12, 1);  -- coke * 1
+INSERT INTO orders_products (order_id, product_id, product_quantity)
+	VALUES (2, 13, 3);  -- orange juice * 3
 -----------------------------
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (3, 7, 2);   -- cake * 2
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (3, 8, 2);   -- pancake * 2
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (3, 7, 2);   -- cake * 2
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (3, 8, 2);   -- pancake * 2
 ------------------------------
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (4, 5, 3);   -- cucumber salad * 3
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (4, 5, 3);   -- cucumber salad * 3
 -------------------------------
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (5, 2, 2);   -- pork * 2
-INSERT INTO OrdersProducts (OrderId, ProductId, ProductQuantity) VALUES (5, 11, 2);  -- wine * 2
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (5, 2, 2);   -- pork * 2
+INSERT INTO orders_products (order_id, product_id, product_quantity) 
+	VALUES (5, 11, 2);  -- wine * 2

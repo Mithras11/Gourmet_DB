@@ -1,11 +1,11 @@
-USE Restaurant;
+USE restaurant;
 
 CREATE 
     TRIGGER  add_price
- BEFORE INSERT ON OrdersProducts FOR EACH ROW 
-    SET NEW . ProductPrice = (SELECT 
-            p.Price
+ BEFORE INSERT ON orders_products FOR EACH ROW 
+    SET NEW . product_price = (SELECT 
+            p.price
         FROM
-            Products AS p
+            products AS p
         WHERE
-            p.id = NEW.ProductId);
+            p.id = NEW.product_id);

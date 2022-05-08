@@ -1,13 +1,13 @@
-USE Restaurant;
+USE restaurant;
 
-CREATE INDEX idx_productName
-ON Products (`Name`);
+CREATE INDEX product_name_idx
+ON products (product_name);
 
-CREATE INDEX idx_productPrice
-ON OrdersProducts (ProductPrice);
+CREATE INDEX product_price_idx
+ON orders_products (product_price);
 
-CREATE INDEX idx_orderCreateDate
-ON Orders (CreateDate);
+CREATE INDEX order_create_date_idx
+ON orders (create_date);
 
-CREATE INDEX idx_orderEndDate
-ON Orders (EndDate);
+CREATE INDEX order_end_date_idx
+ON orders (end_date);
