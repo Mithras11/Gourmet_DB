@@ -1,25 +1,25 @@
-USE Restaurant;
+USE restaurant;
 
 SELECT 
-    p.`Name`, p.Id, p.Price, op.ProductPrice
+    p.product_name, p.id, p.price, op.product_price
 FROM
-    Products AS p
+    products AS p
         INNER JOIN
-    OrdersProducts AS op ON p.Id = op.ProductId
+    orders_products AS op ON p.id = op.product_id
 WHERE
-    p.`Name` = 'Wine';
+    p.product_name = 'Wine';
 
-UPDATE Products 
+UPDATE products 
 SET 
-    Price = Price + 1
+    price = price + 1
 WHERE
-    Id = 11;
+    id = 11;
 
 SELECT 
-    p.`Name`, p.Id, p.Price, op.ProductPrice
+    p.product_name, p.id, p.price, op.product_price
 FROM
-    Products AS p
+    products AS p
         INNER JOIN
-    OrdersProducts AS op ON p.Id = op.ProductId
+    orders_products AS op ON p.id = op.product_id
 WHERE
-    p.`Name` = 'Wine'
+    p.product_name = 'Wine';

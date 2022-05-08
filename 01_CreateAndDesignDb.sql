@@ -152,5 +152,5 @@ CREATE TABLE orders_products (
         REFERENCES users (id),
     FOREIGN KEY (updated_by)
         REFERENCES users (id),
-    CONSTRAINT pk_orders_products PRIMARY KEY (order_id , product_id)
+    CONSTRAINT orders_products_pk PRIMARY KEY (order_id , product_id)
 );

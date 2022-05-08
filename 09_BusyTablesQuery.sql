@@ -1,13 +1,13 @@
 /* List of busy/occupied tables */
-USE Restaurant;
+USE restaurant;
 
 SELECT 
-    t.Id AS TableNumber, os.`Name` AS `OrderStatus`
+    t.id AS table_number, os.status_name AS order_status
 FROM
-    `Tables` AS t
+    restaurant_tables AS t
         INNER JOIN
-    Orders AS o ON t.Id = o.`Table`
+    orders AS o ON t.id = o.order_table
         INNER JOIN
-    OrderStatuses AS os ON o.`Status` = os.Id
+    order_statuses AS os ON o.order_status = os.id
 WHERE
-    o.`Status` = 1;
+    o.order_status = 1;

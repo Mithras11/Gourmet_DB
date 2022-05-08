@@ -1,26 +1,26 @@
 /* Products list - select all active products (paginated) */
-USE Restaurant;
+USE restaurant;
 
-UPDATE Products 
+UPDATE products 
 SET 
-    IsDeleted = 1
+    is_deleted = 1
 WHERE
-    `Name` = 'Whisky' OR `Name` = 'Spinach';
+    product_name = 'Whisky' OR product_name = 'Spinach';
 
 SELECT 
     *
 FROM
-    Products
+    products
 WHERE
-    IsDeleted = 0
-ORDER BY `Name`
-LIMIT 0 , 5;
+    is_deleted = 0
+ORDER BY product_name
+LIMIT 0, 5;
 
 SELECT 
     *
 FROM
-    Products
+    products
 WHERE
-    IsDeleted = 0
-ORDER BY `Name`
-LIMIT 5 , 5;
+    is_deleted = 0
+ORDER BY product_name
+LIMIT 5, 5;
