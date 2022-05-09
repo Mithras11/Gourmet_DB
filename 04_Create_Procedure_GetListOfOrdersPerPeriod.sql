@@ -9,5 +9,5 @@ CREATE PROCEDURE  get_list_of_orders_per_period (IN selected_start_date DATETIME
 	INNER JOIN products AS p
 		ON op.product_id = p.id
 	WHERE o.create_date >= selected_start_date  -- only lists orders made in february and march
-		AND o.end_date <= selcted_end_date     -- that are completed (e.g. order 1 is marked in progress therefore is missing here)
+		AND o.end_date <= selcted_end_date  -- that are completed (e.g. order 1 is marked in progress therefore is missing here)
 	GROUP BY o.id, o.end_date;
