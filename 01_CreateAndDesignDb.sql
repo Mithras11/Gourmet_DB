@@ -65,7 +65,7 @@ CREATE TABLE category_types (
     updated_by INT,
     PRIMARY KEY (id),
     FOREIGN KEY (main_category)
-		REFERENCES product_categories (id),
+	REFERENCES product_categories (id),
     FOREIGN KEY (created_by)
         REFERENCES users (id),
     FOREIGN KEY (updated_by)
