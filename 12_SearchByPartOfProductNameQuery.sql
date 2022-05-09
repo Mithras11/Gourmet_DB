@@ -1,10 +1,10 @@
 /* Search by part of product name - select all matching products */
-USE Restaurant;
+USE restaurant;
 
 SELECT 
-    p.`Name`
+    product_name
 FROM
-    Products AS p
+    products
 WHERE
-    `Name` LIKE '%ke%'
-ORDER BY `Name`;
+    product_name LIKE '%ke%'
+ORDER BY product_name;
